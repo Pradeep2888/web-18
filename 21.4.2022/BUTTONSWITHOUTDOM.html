@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUTTONS WITHOUT DOM</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #row1{
+           background-color: white;
+            display: grid;
+            grid-template-columns: repeat(9,1fr);
+            grid-template-rows: repeat(1,50px);
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+            
+            
+        }
+        #row1>div{
+           
+            text-align: center;
+            font-size: 24px;
+            flex-wrap: wrap;
+            padding-top: 10px;
+            border-radius: 10px;
+        }
+       
+        #primery{
+            color: white;
+            background-color:blue;
+        }
+        #secondary{
+            color: white;
+            background-color:grey;
+        }
+        #success{
+            color: white;
+            background-color:greenyellow;
+        }
+        #danger{
+            color: white;
+            background-color:red;
+        }
+        #warning{
+            
+            background-color:yellow;
+        }
+        #info{
+            color: white;
+            background-color:turquoise;
+        }
+        #dark{
+            color: white;
+            background-color:black;
+        }
+        #link{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <row id="row1">
+        <div id="primery">Primary</div>
+        <div id="secondary">Secondary</div>
+        <div id="success">Success</div>
+        <div id="danger">Danger</div>
+        <div id="warning">Warning</div>
+        <div id="info">Info</div>
+        <div id="light">Light</div>
+        <div id="dark">Dark</div>
+        <div id="link">Link</div>
+    </row>
+</body>
+</html>

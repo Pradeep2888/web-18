@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DE-COMMERCE NAVBAR</title>
+    <style>
+        #navbar{
+            border: 1px solid red;
+            display: grid;
+            grid-template-columns: repeat(4,150px);
+            grid-template-rows: repeat(1,50px);
+            justify-content: space-around;
+            text-align: center;
+            background-color: red;
+            font-size: 24px;
+            color: white;
+            text-decoration: underline;            
+        }
+        #navbar>div{
+            border: 1px solid red;
+            cursor: pointer;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div id="signup" ><a href="sign_up.html">Sign Up</a></div>
+        <div id="login"><a href="login.html">Log In</a></div>
+        <div id="men"><a href="mens.html">Mens</a></div>
+        <div id="women"><a href="womens.html">Women's Page</a></div>
+    </div>
+</body>
+</html>
+
+<!-- <script>
+    document.querySelector("#signup").addEventListener("click",signupfunction)
+    function signupfunction(){
+        document.links
+    }
+</script> -->
+

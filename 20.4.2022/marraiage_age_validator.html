@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marraiage_age_validator</title>
+</head>
+<body>
+    <select name="gender" id="sex">
+        <option value="Male">M</option>
+        <option value="Female">F</option>
+        <option value="transGender">T</option>
+    </select>
+    
+        <input type="Number" placeholder="Age" id="age">
+        <button onclick="marraiage_age_validator()">Submit</button>
+        <p id="result">Show result</p>
+   
+</body>
+</html>
+
+
+
+<script>
+    function marraiage_age_validator()
+    {
+        var age=document.getElementById("age").value
+        var gender=document.getElementById("sex").value
+        
+
+        if(age>18 && gender=="Female")
+        {
+           document.getElementById("result").innerText="Legal to Marry" 
+        }
+        else if(age<18  && gender=="Female")
+        {
+           document.getElementById("result").innerText="Not Legal to Marry" 
+        }
+        else if(age==18  && gender=="Female")
+        {
+           document.getElementById("result").innerText="you are Legal to Marry after 1 year" 
+        }
+
+
+        
+         else if(age>20 && gender=="Male")
+        {
+           document.getElementById("result").innerText="Legal to Marry" 
+        }
+        else if(age<20  && gender=="Male")
+        {
+           document.getElementById("result").innerText="Not Legal to Marry" 
+        }
+        else if(age==20  && gender=="Male")
+        {
+           document.getElementById("result").innerText="you are Legal to Marry after 1 year" 
+        }
+
+
+
+        else if(age>19 && gender=="transGender")
+        {
+           document.getElementById("result").innerText="Legal to Marry" 
+        }
+        else if(age<19  && gender=="transGender")
+        {
+           document.getElementById("result").innerText="Not Legal to Marry" 
+        }
+        else if(age==19  && gender=="transGender")
+        {
+           document.getElementById("result").innerText="you are Legal to Marry after 1 year" 
+        }
+        
+    }
+</script>

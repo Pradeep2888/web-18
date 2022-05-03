@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Masai Nav</title>
+    <style>
+        .plate{
+            height: 150px;
+            display: block;
+            width: 100%;
+            position: fixed;
+           
+            
+        }
+        .row1{
+           
+            height: 60px;
+            text-align: center;
+            background-color: black;
+            font-family: sans-serif;
+            color: white;
+            
+            
+        
+        }
+        .button{
+            height: 70%;
+            border: 1px solid black;
+            margin-top:10px;
+            border-radius: 5px;
+            background-color: transparent;
+            color: red;
+
+        }
+        .button:hover{
+            background-color: pink;
+            color: red;
+        }
+        .row2{
+           
+            height: 70px;
+            display: flex;
+             
+        }
+        .block{
+            border: 1px solid white;
+            background-color: transparent;
+           height: 50px;
+           margin: auto;
+           font-family:sans-serif;
+        }
+        .block:hover
+        {
+            color: red;
+        }
+        #login{
+            background-color:transparent;
+            width: 100px;
+            border-radius: 10px;
+            color: red;
+            border: 1px solid red;
+        }
+        #login:hover
+        {
+            background-color:pink;
+        }
+        #block1{
+            flex-grow: 0.5;
+            margin: auto;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="plate">
+        <div class="row1">Register for The Coding Classroom and learn 
+            the basics of web development for free. <button class="button">REGISTER ></button></div>
+        <div class="row2">
+            <div  id="block1">
+                <img src="https://www.masaischool.com/img/navbar/logo.svg" alt="masaischool">
+            </div>
+            <button class="block">COURSES ></button>
+            <button class="block">FEES & ISA</button>
+            <button class="block">ABOUT US</button>
+            <button class="block">HIRE FROM US</button>
+            <button class="block">FAQ</button>
+            <button class="block">EVENTS</button>
+            <button class="block" id="login">LOGIN</button>
+        
+        </div>
+    </div>
+</body>
+</html>

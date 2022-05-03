@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bOZAZ</title>
+    <style>
+        #list{
+            display: grid;
+            gap: 50px;
+            grid-template-columns: repeat(4,200px);
+            grid-template-rows: repeat(auto,300px);
+        }
+        #list>div{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form id="form">
+        <select id="item">
+            <option value="electronics">electronics</option>
+            <option value="furniture">furniture</option>
+            <option value="home appliance">home appliance</option>
+            <option value="books">books</option>
+        </select>
+        <input type="text" id="name" placeholder="Product Title">
+        <input type="text" id="detail" placeholder="Product Discripyion">
+        <input type="number" id="price" placeholder="Product Price">
+        <input type="submit">
+    </form>
+    <div id="list">
+
+    </div>
+</body>
+</html>
+
+
+<script>
+    document.querySelector("#form").addEventListener("submit",myfunction)
+
+    function myfunction(){
+        event.preventDefault()
+       
+        var section=document.querySelector("#item").value
+        var name=document.querySelector("#name").value
+        var detail=document.querySelector("#detail").value
+        var price=document.querySelector("#price").value
+        
+
+        // card
+        var card=document.createElement("div")
+           // inner text
+        var categry=document.createElement("h2")
+        categry.innerText=section
+        // inner text
+        var a=document.createElement("p")
+        a.innerText=name
+        // inner text
+        var b=document.createElement("p")
+        b.innerText=detail
+        // inner text
+        var d=document.createElement("p")
+        d.innerText=price
+        var c=document.createElement("button")
+        c.innerText="Delete"
+        c.addEventListener("click",remove)
+
+        function remove(){
+            event.target.parentNode.remove()
+        }
+
+        card.append(categry,a,b,d,c)
+        document.querySelector("#list").append(card)
+    }
+</script>
