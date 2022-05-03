@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="a" type="number" placeholder="Write Number Here">
+    <input id="b" type="number" placeholder="Write Number Here">
+    <hr>
+    <button id="button">Click here to find the exponent!</button>
+    <p id="p">Exponent=</p>
+</body>
+</html>
+
+
+<script>
+    document.querySelector("#button").addEventListener("click",myfunction)
+
+    function myfunction(){
+        var a=document.getElementById("a").value
+        var b=document.getElementById("b").value
+        var result=1
+        for(var i=0;i<b;i++)
+        {
+            result=result*a
+        }
+        document.getElementById("p").innerText="Exponent="+result;
+    }
+</script>

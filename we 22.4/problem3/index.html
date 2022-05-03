@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #row1{
+            display: flex;
+            gap: 20px;
+            background-color: white;
+            margin: 40px;
+            padding: 30px;
+        }
+        #row1>div{
+            height: 40px;
+            width:150px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 24px;
+            padding-top: 10px;
+          
+        }
+    </style>
+</head>
+<body>
+    <div id="row1"></div>
+</body>
+</html>
+
+
+<script>
+    var detail=[
+        {name1:"Primary",color:"white",bgColor:"blue"},
+        {name1:"Secondary",color:"white",bgColor:"grey"},
+        {name1:"Sucess",color:"white",bgColor:"green"},
+        {name1:"Danger",color:"white",bgColor:"red"},
+        {name1:"Warning",color:"black",bgColor:"yellow"},
+        {name1:"Info",color:"white",bgColor:"teal"},
+        {name1:"Light",color:"black",bgColor:"white"},
+        {name1:"Dark",color:"white",bgColor:"black"},
+        {name1:"Link",color:"blue",bgColor:"white"}
+        
+    ]
+
+    detail.forEach(function(el){
+        var card=document.createElement("div")
+        card.innerText=el.name1
+        card.style.backgroundColor=el.bgColor
+       card.style.color=el.color
+        document.querySelector("#row1").append(card)
+    })
+</script>

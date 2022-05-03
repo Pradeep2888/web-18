@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend</title>
+    <style>
+        #container{
+            display: grid;
+            gap:30px;
+            grid-template-columns: repeat(4,200px);
+            grid-template-rows: repeat(auto,200px);
+        
+         }
+         #container>div>img{
+                  height: 50px;
+         }
+    </style>
+    
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+
+<script>
+    var arr=JSON.parse(localStorage.getItem("data"))
+//     investerimage: ""
+// investerlogo: ""
+// investername: ""
+// investerplace: ""
+
+arr.forEach(function(el){
+    var card=document.createElement("div")
+    var image=document.createElement("img")
+    image.setAttribute("src",el.investerimage)
+
+    var name=document.createElement("h3")
+    name.innerText=el.investername
+
+    var place=document.createElement("p")
+    place.innerText=el.investerplace
+
+    var logo=document.createElement("img")
+    logo.setAttribute("src",el.investerlogo)
+
+    card.append(image,name,place,logo)
+    document.querySelector("#container").append(card)
+})
+</script>

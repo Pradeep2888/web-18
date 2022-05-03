@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #row1{
+            /* display:grd;
+            grid-template-columns: repeat(4,30px);
+            grid-template-rows: repeat(1,300px); */
+            display: flex;
+           
+            gap: 20px;
+            border-radius: 20px;
+           
+
+        }
+        #row1>div{
+            box-shadow: rgba(25,25,25,.04) 0 0 1px 0,rgba(0,0,0,.1) 0 3px 4px 0;
+            text-align: center;
+            margin: auto;
+            width: 80%;
+        }
+        #row1>div>img:nth-child(1){
+            width:100%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        #row1>div>#img2{
+            height: 40px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="row1"></div>
+</body>
+</html>
+
+
+<script>
+     
+     var detail=[
+         {link1:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",name1:"Vijay",position1:"Founder&ceo",link2:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+         {link1:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",name1:"Kunal",position1:"Founder",link2:"https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"},
+         {link1:"https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg",name1:"Amrish",position1:"CEO",link2:"https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png"},
+         {link1:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg",name1:"Sampand",position1:"Ceo",link2:"https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png"},
+         
+     ]
+
+   
+    
+    detail.forEach(function(el){
+        var card1=document.createElement("div")
+    
+    var image=document.createElement("img")
+    image.setAttribute("src",el.link1)
+
+    var name=document.createElement("h2")
+    name.innerText=el.name1
+    var position=document.createElement("p")
+    position.innerText=el.position1
+    var picture=document.createElement("img")
+    picture.setAttribute("src",el.link2)
+    picture.setAttribute("id","img2")
+
+    card1.append(image,name,position,picture)
+   document.querySelector("#row1").append(card1)
+    })
+
+
+  
+    
+
+
+
+
+
+</script>

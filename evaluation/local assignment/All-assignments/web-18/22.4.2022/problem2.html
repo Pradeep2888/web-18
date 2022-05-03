@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #row1{
+            /* display:grd;
+            grid-template-columns: repeat(4,30px);
+            grid-template-rows: repeat(1,300px); */
+            display: flex;
+           
+            gap: 20px;
+            border-radius: 20px;
+           
+
+        }
+        #row1>div{
+            box-shadow: rgba(25,25,25,.04) 0 0 1px 0,rgba(0,0,0,.1) 0 3px 4px 0;
+            position: relative;
+            margin: auto;
+            width: 80%;
+        }
+        #row1>div>img:nth-child(1){
+            width:100%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        #price{
+            position: relative;
+        }
+       #strike{
+           text-decoration: line-through;
+           position:absolute;
+           bottom: 0px;
+           padding-left: 70px;
+           
+       }
+        
+    </style>
+</head>
+<body>
+    <div id="row1"></div>
+</body>
+</html>
+
+<script>
+    var data = [
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$25.00",
+        strikedOffPrice:"$95.00"
+    },{
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },{
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    }
+]
+
+data.forEach(function(el){
+        var card1=document.createElement("div")
+    
+    var image=document.createElement("img")
+    image.setAttribute("src",el.imgUrl)
+
+    var name=document.createElement("h5")
+    name.innerText=el.name
+    var position=document.createElement("p")
+    position.innerText=el.price
+    position.setAttribute("id","price")
+
+    var off=document.createElement("p")
+    off.setAttribute("id","strike")
+    off.innerText=el.strikedOffPrice
+
+    card1.append(image,name,position,off)
+   document.querySelector("#row1").append(card1)
+    })
+
+
+
+</script>

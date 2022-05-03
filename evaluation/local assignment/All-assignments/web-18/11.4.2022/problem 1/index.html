@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <style>
+        h1{
+            color: aqua;
+            text-align: center;
+            font-size: 45px;
+        }
+      #pad{
+         
+          height: 360px;
+          width: 25%;
+          margin: auto;
+          padding-top: 35px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      #pad>#row{
+          height: 55px;
+          
+          width: 75%;
+          /* display:block; */
+          margin: auto;
+          margin-top: 7px;
+          display: flex;
+          }
+      #row>#key{
+          height: 100%;
+        
+          width: 21%; 
+          margin-right: 16px;  
+             
+      }
+      #row>#key1{
+          height: 100%;
+         
+          width: 21%; 
+          margin:auto; 
+          background-color: black; 
+          color: white;
+             
+      }
+      #row>#key4{
+          height: 100%;
+          
+          width: 21%; 
+          margin:auto; 
+          background-color: black; 
+          margin-right: 16px  ;
+          color: white;
+             
+      }
+      #row>#key2{
+          height: 100%;
+         
+          width: 21%; 
+          margin:auto; 
+          background-color: red; 
+          margin-right: 16px ;  
+          color: white;
+      }
+      div div{
+          text-align: center;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          border: 0px solid transparent;
+          border-radius: 5px;
+      }
+    </style>
+</head>
+<body>
+    <h1>Masai Calculator</h1>
+    <div id="pad">
+        <div id="row"></div>
+        <div id="row">
+            <div id="key"><h3>1</h3></div>
+            <div id="key"><h3>2</h3></div>
+            <div id="key"><h3>3</h3></div>
+            <div id="key1"><h3>+</h3></div>
+
+        </div>
+        <div id="row">
+            <div id="key"><h3>4</h3></div>
+            <div id="key"><h3>5</h3></div>
+            <div id="key"><h3>6</h3></div>
+            <div id="key1"><h3>-</h3></div>
+
+        </div>
+        <div id="row">
+            <div id="key"><h3>7</h3></div>
+            <div id="key"><h3>8</h3></div>
+            <div id="key"><h3>9</h3></div>
+            <div id="key1"><h3>X</h3></div>
+
+        </div>
+        <div id="row">
+            <div id="key2"><h3>C</h3></div>
+            <div id="key"><h3>0</h3></div>
+            <div id="key4"><h3>=</h3></div>
+            <div id="key1"><h3>/</h3></div>
+
+        </div>
+        
+    </div>
+</body>
+</html>

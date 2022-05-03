@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #row1{
+           
+            justify-content: center;
+ 
+            font-size: 24px;
+            margin: auto;
+            text-align: center;
+            font-family: sans-serif;
+           
+        }
+        #row2{
+                   
+            justify-content: center;
+         
+            color: grey;
+            font-size: 24px;
+            margin: auto;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        #row3{
+            
+            display: grid;
+            gap: 50px;
+            padding: 60px;
+            margin-top:60px;
+            justify-content: center;
+            grid-template-columns: repeat(3,auto);
+            grid-template-rows: auto;
+            grid-template-areas: "a b c";
+        }
+        #row3>div:nth-child(1){
+            grid-area: a;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 20px;
+        }
+        #row3>div:nth-child(2){
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            grid-area: b;
+            border-radius: 20px;
+        }
+        #row3>div:nth-child(3){
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            grid-area: c;
+            border-radius: 20px;
+            
+        }
+        #h2{
+            text-align: center;
+            font-family: sans-serif;
+           
+        }
+        #h1{
+            text-align: center;
+            font-family: sans-serif;
+          
+           color: green;
+        }
+        #p1{
+            text-align: center;
+            font-family: sans-serif;
+            font-style: italic;
+            margin-top: -30px;
+        }
+        #p2{
+            text-align: center;
+            font-family: sans-serif;
+          
+           margin-top:80px ;
+           padding: 20px;
+           color: grey;
+           
+        }
+        #button{
+            margin: auto;
+            margin-bottom: 20px;
+            display: flex;
+            border: 1px solid blue;
+            font-size: 24px;
+            font-family: sans-serif;
+            padding:10px 20px 10px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            color: blue;
+            background-color: white;
+            
+        }
+        #button:hover{
+             color: white;
+             font-weight: bold;
+             background-color: blue;
+        }
+        @media all and (min-width:451px) and (max-width:750px){
+           
+       #row3{
+           
+           display: grid;
+           gap: 20px;
+           padding: 10px;
+           margin-top:60px;
+           grid-template-columns: repeat(2,1fr);
+           grid-template-rows: repeat(2,auto);
+           grid-template-areas: "a b"
+               "c";
+          
+       }
+        }
+        @media all and (min-width:100px) and (max-width:450px){
+           
+           #row3{
+               
+               display: grid;
+               gap: 20px;
+               padding: 10px;
+               margin-top:60px;
+               justify-content: center;
+               grid-template-columns: repeat(1,1fr);
+               grid-template-rows: repeat(3,1fr);
+               grid-template-areas: "a"
+               "b"
+               "c";
+              
+           }
+            }
+
+        
+    </style>
+</head>
+<body>
+    <div id="row1"><h1>Choose a plan that right for your business</h1></div>
+    <div id="row2"><p>We collect  reviews from our users so you  can get an honest opinion of what an experience with our website are really like!</p></div>
+    <div id="row3">
+        <div>
+            <h2 id="h2">Starter Plan</h2>
+            <h1 id="h1">Free</h1>
+            <p id="p1">Per month</p>
+            <p id="p2">We collect reviews from our users so you get an honest opinion of what an experience with our website. </p>
+            <button id="button">Start Now</button>
+        </div>
+        <div>
+            <h2 id="h2">Starter Plan</h2>
+            <h1 id="h1">Free</h1>
+            <p id="p1">Per month</p>
+            <p id="p2">We collect reviews from our users so you get an honest opinion of what an experience with our website. </p>
+            <button id="button">Start Now</button>
+        </div>
+        <div>
+            <h2 id="h2">Starter Plan</h2>
+            <h1 id="h1">Free</h1>
+            <p id="p1">Per month</p>
+            <p id="p2">We collect reviews from our users so you get an honest opinion of what an experience with our website. </p>
+            <button id="button">Start Now</button>
+        </div>
+        
+    </div>
+</body>
+</html>
