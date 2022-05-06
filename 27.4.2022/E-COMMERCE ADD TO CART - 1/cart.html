@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        #row{
+            display: grid;
+            grid-template-columns: repeat(4,200px);
+            grid-template-rows: repeat(auto,300px);
+            gap: 30px;
+            padding: 20px;
+            border: 1px solid red;
+        }
+        #row>div{
+            border: 1px solid red;
+        }
+        #row>div>div>img{
+            width: 100%;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Apply Coupan</h1>
+    <form id="form">
+        <input id="coupan" type="text" placeholder="Coupan code">
+        <input type="submit">
+    </form>
+    <h1 id="sum">Total Sum:</h1>
+    <h1 id="discountprice">Discount Price:<h1>
+    <div id="row">
+
+    </div>
+</body>
+</html>
+
+<script>
+ 
+ var myCart=JSON.parse(localStorage.getItem("addToCart"))
+
+myCart.forEach(function(elem){
+  var card=document.createElement("div")
+
+var image=document.createElement("div")
+var card_image=document.createElement("img")
+card_image.setAttribute("src",elem.image_url)
+
+var name1=document.createElement("h3")
+name1.innerText=elem.name
+
+var price1=document.createElement("p")
+   price1.innerText=elem.price
+
+var offprice1=document.createElement("p")
+   offprice1.innerText=elem.strikedoffprice
+
+var button=document.createElement("button")
+    button.innerText="Delete" 
+    button.addEventListener("click",function(elem,index){
+      
+      myFunction(elem,index)
+      
+    })
+
+image.append(card_image)
+card.append(image,name1,price1,offprice1,button)
+
+document.querySelector("#row").append(card)
+})
+
+function myFunction(elem,index){
+  event.preventDefault()
+  myCart.splice(index,1)
+  localStorage.setItem("addToCart",JSON.stringify(myCart))
+  window.location.reload()
+}
+
+var out=myCart.reduce(function(sum,el){
+    return sum+el.price
+},0)
+document.querySelector("#sum").innerText="Total Sum:"+out
+
+var coupan=document.querySelector("#form").addEventListener("submit",disCount)
+function disCount(){
+    event.preventDefault()
+    var discount=document.querySelector("#coupan").value
+    if(discount=="flat100"){
+        document.querySelector("#discountprice").innerText="Discount Price:"+(out-100)
+    }
+}
+
+
+
+  
+</script>

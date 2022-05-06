@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <style>
+        #submit{
+            display: block;
+            margin-top: 40px;
+            padding: 2px 15px 2px 15px;
+            font-size: 20px;
+            margin: 40px auto auto auto;
+            background-color: aqua;
+            cursor: pointer;
+            
+        }
+        #card{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            text-align: center;
+            height: auto;
+            width: 300px;
+            margin: auto;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+        <h2>Sign Up</h2>
+        <form id="form">
+           <p>Full Name</p>
+           <input id="name" type="text" placeholder="Enter Your Name">
+           <p>Email</p>
+           <input id="email" type="email" placeholder="abc@gmail.com">
+           <p>Password</p>
+           <input id="password" type="text" placeholder="Your Password">
+             
+          
+        </form>
+        <button id="submit"> <a href="navbar.html">Sign Up</a> </button>
+    </div>
+</body>
+</html>
+
+
+<script>
+document.querySelector("#submit").addEventListener("click",function(event){
+    event.preventDefault()
+    var data={
+        name:form.name.value,
+        email:form.email.value,
+        password:form.password.value
+    }
+   
+    localStorage.setItem("userData",JSON.stringify(data))
+    window.location.href="signin.html"
+})
+
+
+
+
+</script>
