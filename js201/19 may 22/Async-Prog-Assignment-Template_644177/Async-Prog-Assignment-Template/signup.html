@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signup</title>
+        <style>
+            #navbar{
+    justify-content: flex-end;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px;
+    border: 3px solid black;
+}
+#navbar>div>a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+#navbar>div{
+    margin-right: 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px;
+}
+#form{
+   
+    
+    height: 100%;
+}
+#form>input{
+    display: block;
+    height: 40px;
+    width :98%;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+#submit{
+    background-color: aqua;
+}
+#signup-form-div{
+    margin: auto;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: auto;
+    width: 20%;
+    margin-top: 100px;
+    text-align: center;
+}
+        </style>
+        
+         
+         
+     
+    </head>
+
+    <body>
+        <div id="navbar">
+            <div><a href="index.html">Home</a></div>
+            <div><a href="login.html">Login</a></div>
+            <div><a href="signup.html">Sign Up</a></div>
+       </div>
+        <div id="signup-form-div">
+            <h1>Sign Up</h1>
+
+            <form id="form" onsubmit="signup()">
+                <!--Write form input elements here-->
+                <input type="text" placeholder="Name" id="name">
+                <input type="number" placeholder="Number" id="number">
+                <input type="email" placeholder="Email" id="email">
+                <input type="text" placeholder="Password" id="password">
+                <input type="submit" id="submit">
+
+
+            </form>
+
+        </div>
+    </body>
+
+</html>
+
+<script>
+    
+
+    // let a=document.querySelector("#form").addEventListener("submit",signup)
+   function signup(){
+    //    event.preventDefault();
+
+
+       let name=form.name.value
+      let number=form.number.value
+      let email=form.email.value
+      let password=form.password.value
+
+
+       let object={
+         name:name,
+         number:number,
+         email:email,
+         password:password  
+        }
+       
+       console.log(object)
+    //    let name=form.name.value
+    //   let number=form.number.value
+    //   let email=form.email.value
+    //   let password=form.password.value
+    //   if(number===""){
+    //       alert("Please fill all Details")
+    //   }
+    //  else if(name===""){
+    //       alert("Please fill all Details")
+    //   }
+    //   else if(email===""){
+    //       alert("Please fill all Details")
+    //   }
+    //   else if(password===""){
+    //       alert("Please fill all Details")
+    //   }
+      
+    //   else{
+    //     let object={
+    //      name:name,
+    //      number:number,
+    //      email:email,
+    //      password:password  
+    //     }
+    //     localStorage.setItem("details",JSON.stringify(object))
+    //     window.location.href="login.html"
+    // //   document.getElementById("name").value=null
+    // //   document.getElementById("number").value=null
+    // //   document.getElementById("email").value=null
+    // //   document.getElementById("password").value=null
+    //   }
+   
+     
+       
+   }
+</script>

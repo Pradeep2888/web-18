@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+       
+        <style>
+            #navbar{
+                justify-content: flex-end;
+                display: flex;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                padding: 10px;
+                border: 3px solid black;
+            }
+            #navbar>div>a{
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+            }
+            #navbar>div{
+                margin-right: 40px;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                padding: 10px;
+            }
+            #form{
+   
+                    
+                height: 100%;
+                }
+                #form>input{
+                display: block;
+                height: 40px;
+                width :98%;
+                margin-bottom: 20px;
+                font-size: 24px;
+                }
+                #submit{
+                background-color: aqua;
+                }
+                #login-form-div{
+                margin: auto;
+                padding: 20px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                height: auto;
+                width: 20%;
+                margin-top: 100px;
+                text-align: center;
+                }
+                        </style>
+    </head>
+
+    <body>
+        <div id="navbar">
+            <div><a href="index.html">Home</a></div>
+            <div><a href="login.html">Login</a></div>
+            <div><a href="signup.html">Sign Up</a></div>
+       </div>
+        <div id="login-form-div">
+
+            <form id="form">
+                <input type="email" placeholder="Write user email" id="email">
+                <input type="text" placeholder="Write password" id="password">
+                <input type="submit" id="submit">
+                <!--Write form input elements here-->
+
+            </form>
+
+        </div>
+    </body>
+
+</html>
+
+<script>
+    let a=document.querySelector("#form").addEventListener("submit",login)
+     function login(){
+       event.preventDefault();
+      let email=form.email.value
+      let password=form.password.value
+     
+      if(email===""){
+          alert("Please write email")
+      }
+      else if(password===""){
+          alert("Please write password")
+      }
+      
+      else{
+        let object={
+         email:email,
+         password:password  
+        }
+       let detail=JSON.parse(localStorage.getItem("details"))
+       if(detail.email === object.email  &&  detail.password === object.password){
+           window.location.href="index.html"
+       }
+       else{
+           alert("invalid Credentials")
+       }
+    
+      }
+   
+     
+       
+   }
+</script>

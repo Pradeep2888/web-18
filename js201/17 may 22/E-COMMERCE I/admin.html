@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="sunbmitProduct(event)" id="form">
+        <input type="text" placeholder="Product name" id="name">
+        <input type="text" placeholder="Category" id="category">
+        <input type="text" placeholder="Img url" id="image">
+        <input type="number" placeholder="Price" id="price">
+        <select name="Gender"  id="gender">
+            <option value="">Selct Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+          <select name="Sold" id="sold">
+              <option value="">Sold</option>
+              <option value="False">False</option>
+              <option value="True">True</option>
+          </select> 
+          <input type="submit" id="add">       
+    </form>
+</body>
+</html>
+
+<script>
+
+function myProduct(p,c,i,pr,g,s){
+    this.Product_name=p,
+    this.Category=c,
+    this.Img_url=i,
+    this.Price=pr,
+    this.Gender=g,
+    this.Sold=s
+    
+}
+    var arr=[]
+
+    function sunbmitProduct(e){
+        e.preventDefault();
+        let form=document.querySelector("#form")
+        let p=form.name.value
+        let c=form.category.value
+        let i=form.image.value
+        let pr=form.price.value
+        let g=form.gender.value
+        let s=form.sold.value
+        if(s==""){
+            s=form.sold.value="False"
+        }
+
+        let product=new myProduct(p,c,i,pr,g,s)
+        arr.push(product)
+        localStorage.setItem("Products",JSON.stringify(arr))
+    }
+
+
+</script>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dash Board</title>
+    <style>
+        #navbar{
+            display: flex;
+        }
+        #navbar>#batchedetail{
+            display: flex;
+        }
+        #navbar>#batchedetail>h3{
+            margin-right: 20px;
+        }
+        #listall{
+            display: flex;
+        }
+        #listall>div{
+            border: 1px solid red;
+            margin: auto;
+        }
+        #listall>div>div{
+            border: 1px solid red;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+     <!-- navbar -->
+     <div id="navbar">
+        <div id="batchedetail">
+            <h3 id="batch1">Batch-1:</h3>
+            <h3 id="batch2">Batch-2:</h3>
+            <h3 id="batch3">Batch-3:</h3>
+            <h3 id="batch4">Batch-4:</h3>
+            <h3 id="batch5">Batch-5:</h3>
+        </div>
+        <div id="anchor">
+            <a href="index.html">Home Page</a>
+            <a href="dashboard.html">Dash Board</a>
+        </div>
+    </div>
+
+    <div>
+        <div id="listall">
+            <div id="list1"></div>
+            <div id="list2"></div>
+            <div id="list3"></div>
+            <div id="list4"></div>
+            <div id="list5"></div>
+        </div>
+       
+    </div>
+
+</body>
+</html>
+
+<script>
+    
+    var arr1=JSON.parse(localStorage.getItem("batch1"))||[]
+    let a=document.querySelector("#batch1")
+    a.innerText="Batch 1:"+(arr1.length)
+    console.log(arr1)
+
+    var arr2=JSON.parse(localStorage.getItem("batch2"))||[]
+    let b=document.querySelector("#batch2")
+    b.innerText="Batch 2:"+(arr2.length)
+
+    var arr3=JSON.parse(localStorage.getItem("batch3"))||[]
+   
+    let c=document.querySelector("#batch3")
+    c.innerText="Batch 3:"+(arr3.length)
+
+    var arr4=JSON.parse(localStorage.getItem("batch4"))||[]
+    let d=document.querySelector("#batch4")
+    d.innerText="Batch 4:"+(arr4.length)
+
+    var arr5=JSON.parse(localStorage.getItem("batch5"))||[]
+    let e=document.querySelector("#batch5")
+    e.innerText="Batch 5:"+(arr5.length)
+
+    arr1.forEach(function(el,index){
+      
+      
+        let list=document.querySelector("#list1")
+        
+       let card=document.createElement("div")
+       let img=document.createElement("img")
+  
+       img.src=el.image
+       let batch=document.createElement("h2")
+       batch.innerText=el.batch
+       let name=document.createElement("h3")
+       name.innerText=el.name
+       let course=document.createElement("p")
+       course.innerText=el.course
+       let unit=document.createElement("p")
+       unit.innerText=el.unit
+       let del=document.createElement("button")
+       del.innerText="Delete"
+       del.addEventListener("click",function(){
+       
+           
+        deleteItem1(index)
+ 
+       })
+       let update=document.createElement("button")
+       update.innerText="update"
+
+       card.append(img,batch,name,course,unit,del,update)
+
+       list.append(card)
+    })
+
+    function deleteItem1(index){
+        var arr1=JSON.parse(localStorage.getItem("batch1"))||[]
+        let trash=JSON.parse(localStorage.getItem("trash"))||[]
+        trash.push(arr1[index])
+        localStorage.setItem("trash",JSON.stringify(trash))
+        arr1.splice(index,1)
+        localStorage.setItem("batch1",JSON.stringify(arr1))
+        window.location.reload()
+        // append();
+      
+    }
+
+
+
+
+
+    arr2.forEach(function(el,index){
+      
+      
+      let list=document.querySelector("#list2")
+      
+     let card=document.createElement("div")
+     let img=document.createElement("img")
+
+     img.src=el.image
+     let batch=document.createElement("h2")
+     batch.innerText=el.batch
+     let name=document.createElement("h3")
+     name.innerText=el.name
+     let course=document.createElement("p")
+     course.innerText=el.course
+     let unit=document.createElement("p")
+     unit.innerText=el.unit
+     let del=document.createElement("button")
+     del.innerText="Delete"
+     del.addEventListener("click",function(){
+     
+         
+      deleteItem2(index)
+
+     })
+     let update=document.createElement("button")
+     update.innerText="update"
+
+     card.append(img,batch,name,course,unit,del,update)
+
+     list.append(card)
+  })
+
+  function deleteItem2(index){
+      var arr2=JSON.parse(localStorage.getItem("batch2"))||[]
+      let trash=JSON.parse(localStorage.getItem("trash"))||[]
+      trash.push(arr2[index])
+      localStorage.setItem("trash",JSON.stringify(trash))
+      arr2.splice(index,1)
+      localStorage.setItem("batch2",JSON.stringify(arr2))
+      window.location.reload()
+      // append();
+    
+  }
+
+
+
+
+
+
+
+  arr3.forEach(function(el,index){
+      
+      
+      let list=document.querySelector("#list3")
+      
+     let card=document.createElement("div")
+     let img=document.createElement("img")
+
+     img.src=el.image
+     let batch=document.createElement("h2")
+     batch.innerText=el.batch
+     let name=document.createElement("h3")
+     name.innerText=el.name
+     let course=document.createElement("p")
+     course.innerText=el.course
+     let unit=document.createElement("p")
+     unit.innerText=el.unit
+     let del=document.createElement("button")
+     del.innerText="Delete"
+     del.addEventListener("click",function(){
+     
+         
+      deleteItem3(index)
+
+     })
+     let update=document.createElement("button")
+     update.innerText="update"
+
+     card.append(img,batch,name,course,unit,del,update)
+
+     list.append(card)
+  })
+
+  function deleteItem3(index){
+      var arr3=JSON.parse(localStorage.getItem("batch3"))||[]
+      let trash=JSON.parse(localStorage.getItem("trash"))||[]
+      trash.push(arr3[index])
+      localStorage.setItem("trash",JSON.stringify(trash))
+      arr3.splice(index,1)
+      localStorage.setItem("batch3",JSON.stringify(arr3))
+      window.location.reload()
+      // append();
+    
+  }
+
+
+
+
+
+
+
+  arr4.forEach(function(el,index){
+      
+      
+      let list=document.querySelector("#list4")
+      
+     let card=document.createElement("div")
+     let img=document.createElement("img")
+
+     img.src=el.image
+     let batch=document.createElement("h2")
+     batch.innerText=el.batch
+     let name=document.createElement("h3")
+     name.innerText=el.name
+     let course=document.createElement("p")
+     course.innerText=el.course
+     let unit=document.createElement("p")
+     unit.innerText=el.unit
+     let del=document.createElement("button")
+     del.innerText="Delete"
+     del.addEventListener("click",function(){
+     
+         
+      deleteItem4(index)
+
+     })
+     let update=document.createElement("button")
+     update.innerText="update"
+
+     card.append(img,batch,name,course,unit,del,update)
+
+     list.append(card)
+  })
+
+  function deleteItem4(index){
+      var arr4=JSON.parse(localStorage.getItem("batch4"))||[]
+      let trash=JSON.parse(localStorage.getItem("trash"))||[]
+      trash.push(arr4[index])
+      localStorage.setItem("trash",JSON.stringify(trash))
+      arr4.splice(index,1)
+      localStorage.setItem("batch1",JSON.stringify(arr4))
+      window.location.reload()
+      // append();
+    
+  }
+
+
+
+
+
+
+  arr5.forEach(function(el,index){
+      
+      
+      let list=document.querySelector("#list5")
+      
+     let card=document.createElement("div")
+     let img=document.createElement("img")
+
+     img.src=el.image
+     let batch=document.createElement("h2")
+     batch.innerText=el.batch
+     let name=document.createElement("h3")
+     name.innerText=el.name
+     let course=document.createElement("p")
+     course.innerText=el.course
+     let unit=document.createElement("p")
+     unit.innerText=el.unit
+     let del=document.createElement("button")
+     del.innerText="Delete"
+     del.addEventListener("click",function(){
+     
+         
+      deleteItem5(index)
+
+     })
+     let update=document.createElement("button")
+     update.innerText="update"
+
+     card.append(img,batch,name,course,unit,del,update)
+
+     list.append(card)
+  })
+
+  function deleteItem5(index){
+      var arr5=JSON.parse(localStorage.getItem("batch5"))||[]
+      let trash=JSON.parse(localStorage.getItem("trash"))||[]
+      trash.push(arr5[index])
+      localStorage.setItem("trash",JSON.stringify(trash))
+      arr5.splice(index,1)
+      localStorage.setItem("batch5",JSON.stringify(arr5))
+      window.location.reload()
+      // append();
+    
+  }
+
+
+
+
+
+
+
+  
+
+
+</script>

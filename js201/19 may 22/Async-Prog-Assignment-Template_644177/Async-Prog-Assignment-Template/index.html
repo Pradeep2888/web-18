@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+       
+        <style>
+            #navbar{
+                justify-content: flex-end;
+                display: flex;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                padding: 10px;
+                border: 3px solid black;
+            }
+            #navbar>div>a{
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+            }
+            #navbar>div{
+                margin-right: 40px;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                padding: 10px;
+            }
+            #movies{
+                    display:grid;
+                    grid-template-columns: auto auto auto;
+                    grid-template-rows: auto auto auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="navbar">
+            <div><a href="index.html">Home</a></div>
+            <div><a href="login.html">Login</a></div>
+            <div><a href="signup.html">Sign Up</a></div>
+       </div>
+        <div id="slideshow">
+            <!--Show Slideshow here-->
+
+        </div>
+
+        <div id="sort-buttons">
+
+            <!--Add sorting here-->
+            <button id="sort-lh">Sort by low rating to high</button>
+            <button id="sort-hl" value="hl">Sort by High rating to low</button>
+
+        </div>
+        <div id="movies">
+            <!--Show list of movies here-->
+        </div>
+    </body>
+
+</html>
+
+<script>
+    let img=document.createElement("img")
+
+    var arr=["https://images.unsplash.com/photo-1635805737707-575885ab0820?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bW92aWUlMjBwb3N0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=400",
+          "https://images.unsplash.com/photo-1623375428145-4d276c83ce5e?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bW92aWUlMjBwb3N0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=400"
+,
+"https://cdn.shopify.com/s/files/1/0057/3728/3618/products/wandavision.mp_240x360_crop_center.progressive.jpg?v=1614371756"       ]
+let slideshow=document.getElementById("slideshow")
+var i=0
+setInterval(displayHello, 1000);
+function displayHello(){
+    if(i==arr.length){
+        i=0
+    }
+    slideshow.innerHTML=null
+    // console.log(arr[i])
+    var img=document.createElement("img")
+    img.src=arr[i]
+    slideshow.append(img)
+    i++
+}
+
+var arr2=[
+    {image:"https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY98_CR1,0,67,98_AL_.jpg",name:"The God",
+    Date:"1 july 2022",
+    rating:1
+},
+    {image:"https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY98_CR1,0,67,98_AL_.jpg",name:"The God Father",
+    Date:"1 july 2022",
+    rating:2
+},
+    {image:"https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY98_CR1,0,67,98_AL_.jpg",name:"The God Father",
+    Date:"1 july 2022",
+    rating:3
+},
+    {image:"https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY98_CR1,0,67,98_AL_.jpg",name:"The God Father",
+    Date:"1 july 2022",
+    rating:4
+},
+    {image:"https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY98_CR1,0,67,98_AL_.jpg",name:"The God Father",
+    Date:"1 july 2022",
+    rating:5
+},
+    {image:"https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY98_CR1,0,67,98_AL_.jpg",name:"The God Father",
+    Date:"1 july 2022",
+    rating:6
+},
+    {image:"https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY98_CR1,0,67,98_AL_.jpg",name:"The God Father",
+    Date:"1 july 2022",
+    rating:7
+},
+    {image:"https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY98_CR1,0,67,98_AL_.jpg",name:"The God Father",
+    Date:"1 july 2022",
+    rating:8
+},
+    {image:"https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY98_CR1,0,67,98_AL_.jpg",name:"The God Father",
+    Date:"1 july 2022",
+    rating:9
+  }
+]
+ 
+ localStorage.setItem("movies",JSON.stringify(arr2))
+ var arr1=JSON.parse(localStorage.getItem("movies"))
+ displayData(arr1)
+ document.querySelector("#sort-lh").addEventListener("click",lowhigh)
+ var highlow=document.querySelector("#sort-hl").addEventListener("click",ratingshort)
+
+ function ratingshort(){
+     document.querySelector("#movies").innerHTML=""
+    arr1.sort(function (a, b) {
+          return b.rating - a.rating;
+        });
+        console.log(arr1)
+        displayData(arr1)
+ }
+
+ function lowhigh(){
+     document.querySelector("#movies").innerHTML=""
+    arr1.sort(function (a, b) {
+          return a.rating - b.rating;
+        });
+        console.log(arr1)
+        displayData(arr1)
+ }
+ 
+
+ 
+
+
+ function  displayData(arr1){
+    for(let i =0;i<arr1.length;i++){
+    let im=arr1[i].image    
+    let n=arr1[i].name    
+    let d=arr1[i].Date    
+    let r=arr1[i].rating
+   
+    card(im,n,d,r)   
+  }
+
+  function  card(im,n,d,r) {
+    let movies=document.querySelector("#movies")
+     
+    let card=document.createElement("div")
+    
+    let img=document.createElement("img")
+    img.src=im
+    
+    let name=document.createElement("h3")
+    name.innerText="Name:"+n
+    
+
+    let date=document.createElement("p")
+    date.innerText="Release Date:"+d
+
+    let rating=document.createElement("p")
+    rating.innerText="Rating:"+r+"/10"
+
+    card.append(img,name,date,rating)
+
+    movies.append(card)
+    
+
+  }
+ }
+
+ 
+
+
+
+</script>
+

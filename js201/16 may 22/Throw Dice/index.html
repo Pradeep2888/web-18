@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <!-- <style>
+               #member-1{
+                  background-color: ;
+                   }
+   </style> -->
+</head>
+<body>
+    <div id="winner">Winner:</div>
+    <div id="member-1"> Member:1-</div>
+    <div id="member-2">Member:2-</div>
+    <div id="member-3">Member:3-</div>
+    <button id="roll">ROLL THE DICE</button>
+</body>
+</html>
+<script>
+    
+    document.querySelector("#roll").addEventListener("click",randomNumber)
+    
+    
+    function randomNumber(){
+        var max=7
+       var d1=Math.floor(Math.random()*max) 
+        document.querySelector("#member-1").innerText="Member:1-"+d1
+        var d2=Math.floor(Math.random()*max)
+        document.querySelector("#member-2").innerText="Member:2-"+d2
+        var d3=Math.floor(Math.random()*max)
+        document.querySelector("#member-3").innerText="Member:3-"+d3
+          
+        if(d1>d2 && d1>d3){
+            document.querySelector("#winner").innerText="Winner:"+d1
+            document.querySelector("#member-1").style.backgroundColor="green"
+            if(d1>d2 && d1>d3 && d3==d2){
+                document.querySelector("#member-1").style.backgroundColor="green"
+                document.querySelector("#member-2").style.backgroundColor="blue"
+                document.querySelector("#member-3").style.backgroundColor="blue"
+            }
+            else if(d2>d3){
+                document.querySelector("#member-2").style.backgroundColor="yellow"
+                document.querySelector("#member-3").style.backgroundColor="red"
+            }
+            else if(d3>d2){
+                document.querySelector("#member-3").style.backgroundColor="yellow"
+                document.querySelector("#member-2").style.backgroundColor="red"
+            }
+            else if(d2==d3){
+                document.querySelector("#member-3").style.backgroundColor="blue"
+                document.querySelector("#member-2").style.backgroundColor="blue"
+            }
+           
+        
+        }
+        else if(d2>d1 && d2>d3){
+            document.querySelector("#winner").innerText="Winner:"+d2
+
+            document.querySelector("#member-2").style.backgroundColor="green"
+            if(d2>d1 && d2>d3 && d3==d1){
+                document.querySelector("#member-2").style.backgroundColor="green"
+                document.querySelector("#member-1").style.backgroundColor="blue"
+                document.querySelector("#member-3").style.backgroundColor="blue"
+            }
+            else if(d1>d3){
+                document.querySelector("#member-1").style.backgroundColor="yellow"
+                document.querySelector("#member-3").style.backgroundColor="red"
+            }
+            else if(d3>d1){
+                document.querySelector("#member-3").style.backgroundColor="yellow"
+                document.querySelector("#member-1").style.backgroundColor="red"
+            }
+            else if(d2==d3){
+                document.querySelector("#member-3").style.backgroundColor="blue"
+                document.querySelector("#member-1").style.backgroundColor="blue"
+            }
+        }
+        else if(d3>d1 && d3>d2){
+            document.querySelector("#winner").innerText="Winner:"+d3
+
+            document.querySelector("#member-3").style.backgroundColor="green"
+
+            if(d3>d1 && d3>d2 && d2==d1){
+                document.querySelector("#member-3").style.backgroundColor="green"
+                document.querySelector("#member-1").style.backgroundColor="blue"
+                document.querySelector("#member-2").style.backgroundColor="blue"
+            }
+            else if(d1>d2){
+                document.querySelector("#member-1").style.backgroundColor="yellow"
+                document.querySelector("#member-2").style.backgroundColor="red"
+            }
+            else if(d2>d1){
+                document.querySelector("#member-2").style.backgroundColor="yellow"
+                document.querySelector("#member-1").style.backgroundColor="red"
+            }
+            else if(d2==d1){
+                document.querySelector("#member-2").style.backgroundColor="blue"
+                document.querySelector("#member-1").style.backgroundColor="blue"
+            }
+        }
+        else{
+            document.querySelector("#winner").innerText="Winner:"+"Tie"
+            if(d1==d2 && d2==d3){
+                document.querySelector("#member-2").style.backgroundColor="blue"
+                document.querySelector("#member-1").style.backgroundColor="blue"
+                document.querySelector("#member-3").style.backgroundColor="blue"
+            }
+            else if(d1==d2){
+                document.querySelector("#member-2").style.backgroundColor="blue"
+                document.querySelector("#member-1").style.backgroundColor="blue"
+                document.querySelector("#member-3").style.backgroundColor="transparent"
+            }
+            else if(d1==d3){
+                document.querySelector("#member-3").style.backgroundColor="blue"
+                document.querySelector("#member-1").style.backgroundColor="blue"
+                document.querySelector("#member-2").style.backgroundColor="transparent"
+            }
+            else if(d2==d3){
+                document.querySelector("#member-2").style.backgroundColor="blue"
+                document.querySelector("#member-3").style.backgroundColor="blue"
+                document.querySelector("#member-1").style.backgroundColor="transparent"
+            }
+        }
+        // if(d1>d2>d3){
+           
+            
+        //     
+          
+            
+        // }
+
+        
+    }
+ 
+</script>

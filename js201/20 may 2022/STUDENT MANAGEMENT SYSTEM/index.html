@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        #navbar{
+            display: flex;
+        }
+        #navbar>#batchedetail{
+            display: flex;
+        }
+        #navbar>#batchedetail>h3{
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <div id="navbar">
+        <div id="batchedetail">
+            <h3 id="batch1">Batch-1:</h3>
+            <h3 id="batch2">Batch-2:</h3>
+            <h3 id="batch3">Batch-3:</h3>
+            <h3 id="batch4">Batch-4:</h3>
+            <h3 id="batch5">Batch-5:</h3>
+        </div>
+        <div id="anchor">
+            <a href="index.html">Home Page</a>
+            <a href="dashboard.html">Dash Board</a>
+        </div>
+    </div>
+
+    <!-- studentdetais -->
+    <div id="studentdetails">
+        <h1>Student Details</h1>
+        <form id="detail" onsubmit="submitDetail(event)">
+            <input type="text" placeholder="Batch" id="batch">
+            <input type="url" placeholder="image" id="url">
+            <input type="text" placeholder="Name" id="name">
+            <input type="text" placeholder="course" id="course">
+            <input type="text" placeholder="unit" id="unit">
+            <input type="submit" id="submit">
+        
+        </form>
+    </div>
+
+</body>
+</html>
+
+<script>
+    function Details(b,i,n,c,u){
+        this.batch=b
+        this.image=i
+        this.name=n
+        this.course=c
+        this.unit=u
+    }
+     
+    
+    function submitDetail(event){
+        event.preventDefault()
+       
+        let form=document.getElementById("detail")
+        let b= form.batch.value
+        let i= form.url.value  
+        let n= form.name.value
+        let c= form.course.value
+        let u= form.unit.value
+        let p=new Details(b,i,n,c,u)
+        // console.log(p.batch)
+        if(p.batch==1){
+            arr11(p)
+        }
+        else if(p.batch==2){
+            arr22(p)
+        }
+        else if(p.batch==3){
+            arr33(p)
+        }
+        else if(p.batch==4){
+            arr44(p)
+        }
+        else if(p.batch==5){
+            arr55(p)
+        }
+       window.location.reload()
+       
+    }
+    function  arr11(p){
+        event.preventDefault()
+        let arr1=JSON.parse(localStorage.getItem("batch1"))||[]
+        arr1.push(p)
+        localStorage.setItem("batch1",JSON.stringify(arr1))
+        // b.innerText="Batch 1:"+n
+        
+    }
+    function  arr22(p){
+        let arr2=JSON.parse(localStorage.getItem("batch2"))||[]
+        arr2.push(p)
+        localStorage.setItem("batch2",JSON.stringify(arr2))
+    }
+    function  arr33(p){
+        let arr3=JSON.parse(localStorage.getItem("batch3"))||[]
+        arr3.push(p)
+        localStorage.setItem("batch3",JSON.stringify(arr3))
+    }
+    function  arr44(p){
+        let arr4=JSON.parse(localStorage.getItem("batch4"))||[]
+        arr4.push(p)
+        localStorage.setItem("batch4",JSON.stringify(arr4))
+    }
+    function  arr55(p){
+        let arr5=JSON.parse(localStorage.getItem("batch5"))||[]
+        arr5.push(p)
+        localStorage.setItem("batch5",JSON.stringify(arr5))
+    }
+   
+  
+    let arr1=JSON.parse(localStorage.getItem("batch1"))||[]
+    let a=document.querySelector("#batch1")
+    a.innerText="Batch 1:"+(arr1.length)
+
+    let arr2=JSON.parse(localStorage.getItem("batch2"))||[]
+    let b=document.querySelector("#batch2")
+    b.innerText="Batch 2:"+(arr2.length)
+
+    let arr3=JSON.parse(localStorage.getItem("batch1"))||[]
+    let c=document.querySelector("#batch3")
+    c.innerText="Batch 3:"+(arr3.length)
+
+    let arr4=JSON.parse(localStorage.getItem("batch4"))||[]
+    let d=document.querySelector("#batch4")
+    d.innerText="Batch 4:"+(arr4.length)
+
+    let arr5=JSON.parse(localStorage.getItem("batch5"))||[]
+    let e=document.querySelector("#batch5")
+    e.innerText="Batch 5:"+(arr5.length)
+
+   
+
+
+</script>
